@@ -8,18 +8,24 @@ declare const window: Window &
   }
 
 const useBonPay = (props: Config) => {
+
   const [loaded, error] = useScript()
 
   useEffect(() => {
     if (error) throw new Error('Unable to load useBonPay modal')
   }, [error])
 
-  if (error) throw new Error('Unable to load useBonPay modal')
-  let pay
-  if (loaded) {
-    pay = window.BonPay && window.BonPay(props)
+  function returnPayment(){
+    if (error) throw new Error('Unable to load useBonPay modal')
+    let pay
+    if (loaded) {
+      pay = window.BonPay && new (window.BonPay as any)(props)
+      return pay;
+    }
+    return pay;
   }
-  return pay
+  
+  return returnPayment
 }
 
 export default useBonPay
