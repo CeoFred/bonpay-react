@@ -13,11 +13,6 @@ export interface Config {
 }
 
 export interface NestedFuncs {
-  setup: (onSuccess: (data: any) => void, onError: (data: any) => void, onClose: (data: any) => void) => void
+  setup: (onSuccess: any, onError: any, onClose: any) => void
   open: () => void
-}
-
-
-export type SendProps = {
-
 }
