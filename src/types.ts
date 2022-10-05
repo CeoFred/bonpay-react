@@ -12,8 +12,8 @@ export interface Config {
   onClose?: (response: EventResponse) => void
 }
 
-export type NestedFuncs = {
-  setup: () => void
+export interface NestedFuncs {
+  setup: (onSuccess: (data: any) => void, onError: (data: any) => void, onClose: (data: any) => void) => void
   open: () => void
 }
 

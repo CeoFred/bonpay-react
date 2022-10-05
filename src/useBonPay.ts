@@ -18,10 +18,9 @@ const useBonPay = (props: Config) => {
     if (error) throw new Error('Unable to load useBonPay modal')
       let pay;
     if (loaded) {
-       pay = new (window.BonPay as any)(props);
+       pay =  (window.BonPay)(props);
     }
     return pay
-
 }
 
 export default useBonPay

@@ -21,8 +21,8 @@ const App = () => {
 
 
   function handlePayment(){
-    bondPay.setup(onSuccess, onError, onClose); 
-    bondPay.open();
+    bondPay?.setup(onSuccess, onError, onClose); 
+    bondPay?.open();
   }
 
   return <button onClick={handlePayment
