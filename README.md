@@ -106,6 +106,7 @@ BonPay is initialized with a configuration object which is required to setup and
 ```
 
 ### Supported Networks
+
 | Network | ChainId |  |
 | --- | --- | --- |
 | Ethereum  | 1 |  ✅|
@@ -127,8 +128,6 @@ We currently limit the tokens to be used for certain network, below is a table o
 | Mumbai              | 80001   | ❌  | ❌   | ❌   | ❌   |
 | BSC Testnet         | 97      | ❌  | ❌   | ❌   | ❌   |
 | Goerli Testnet      | 5       | ✅  | ❌   | ✅   | ✅   |
-
-
 
 ## License
 
