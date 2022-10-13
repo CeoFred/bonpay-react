@@ -1,6 +1,6 @@
 # Bonpay react SDK
 
-> Web3 Payments made easy
+> Web3 Payment Framework
 
 [![NPM](https://img.shields.io/npm/v/bonpay-react.svg)](https://www.npmjs.com/package/bonpay-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -20,13 +20,13 @@ import { useBonPay } from 'bonpay-react'
 const App = () => {
 
   const bonPay = useBonPay({
-    value: '0.006',
+    value: '0.0001',
     recepient: '0xAFcC4d55a83ae1A449Bee7783A2737aFb5d82254',
     chainId: 5,
     onSuccess,
     onError,
     onClose,
-    tokens: ['USDT']
+    tokens: ['USDT','DAI','USDC']
   })
 
   function onSuccess(data: any) {
@@ -97,7 +97,11 @@ BonPay is initialized with a configuration object which is required to setup and
         collection: ["0xE3ffC7A3Eb0Df96CBc08fC95cdDF776B22124A97"]
     } // optional
    // `tokens` Accept stable coins. supported coins include BUSD,USDC,UDST,DAI. 
-  tokens: ['USDT'] //optional
+
+  tokens: ['USDT'], // optional ,String[]
+
+  // `transfer` Allow third party wallet transfers
+  transfer: true, // default false, not required, boolean
 }
 ```
 
@@ -110,7 +114,6 @@ BonPay is initialized with a configuration object which is required to setup and
 | Mumbai | 80001 |  ✅  |
 | BSC Testnet | 97 |  ✅ |
 | Goerli Testnet | 5 |  ✅  |
-| Kovan Testnet | 42 |  ✅ |
 
 ### Network Supported Stable Token
 
@@ -124,7 +127,6 @@ We currently limit the tokens to be used for certain network, below is a table o
 | Mumbai | 80001 |  ❌  | ❌ | ❌ | ❌|
 | BSC Testnet | 97 |  ❌ | ❌ | ❌ | ❌ |
 | Goerli Testnet | 5 |  ✅  |❌ |  ✅ | ✅  |
-| Kovan Testnet | 42 | ❌ | ❌ | ❌ | ❌|
 
 ## License
 
