@@ -21,7 +21,7 @@ const App = () => {
 
   const bonPay = useBonPay({
     value: '0.0001',
-    recepient: '0xAFcC4d55a83ae1A449Bee7783A2737aFb5d82254',
+    recipient: '0xAFcC4d55a83ae1A449Bee7783A2737aFb5d82254',
     chainId: 5,
     onSuccess,
     onError,
@@ -55,7 +55,7 @@ export default App
 
 
 ##### Setup event handlers
-Emit config data and prepare  UI disalog for transactions.
+Emit config data and prepare  UI dialog for transactions.
 ```js
 
   pay.setup();
@@ -75,19 +75,19 @@ BonPay is initialized with a configuration object which is required to setup and
  // `value` is the amount to send in ether
   value: '1', // no-default, required, string
 
-  // `recepient` is an address to deposit ether value
-  recepient: '0xAFcC4d55a83ae1A449Bee7783A2737aFb5d82254', // no-default, required, string
+  // `recipient` is an address to deposit ether value
+  recipient: '0xAFcC4d55a83ae1A449Bee7783A2737aFb5d82254', // no-default, required, string
 
   // `chainId` is a network Id. 
   chainId: 1, // no-default, required, integer
 
-  // `onSuccess` callBack function on transaction successfull
+  // `onSuccess` callBack function on transaction successful
   onSuccess: function(transactionData){}, // no-default, optional, function
 
    // `onClose` callBack function on modal close
   onClose: function(closeEvent){}, // no-default, optional, function
 
-   // `onError` callBack function on transaction successfull
+   // `onError` callBack function on transaction successful
   onError: function(error){}, // no-default, optional, function
 
   // `nft` Accept NFT as an alternative form of payment specifying
@@ -96,7 +96,7 @@ BonPay is initialized with a configuration object which is required to setup and
    nft: { 
         collection: ["0xE3ffC7A3Eb0Df96CBc08fC95cdDF776B22124A97"]
     } // optional
-   // `tokens` Accept stable coins. supported coins include BUSD,USDC,UDST,DAI. 
+   // `tokens` Accept stable coins. supported coins include BUSD,USDC,USDT,DAI. 
 
   tokens: ['USDT'], // optional ,String[]
 
