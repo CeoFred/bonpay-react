@@ -119,14 +119,16 @@ BonPay is initialized with a configuration object which is required to setup and
 
 We currently limit the tokens to be used for certain network, below is a table of networks ans available stable tokens you can use for your application.
 
-| Network | ChainId | DAI | BUSD | USDT | USDC|
-| --- | --- | --- | --- | --- | --- | --- |
-| Ethereum  | 1 |  ✅| ✅ | ✅| ✅|
-| Binance Smart Chain | 56 |  ✅  | ✅ | ❌ | ✅|
-| Polygon Mainnet | 137 |  ✅  | ✅ | ✅ | ✅|
-| Mumbai | 80001 |  ❌  | ❌ | ❌ | ❌|
-| BSC Testnet | 97 |  ❌ | ❌ | ❌ | ❌ |
-| Goerli Testnet | 5 |  ✅  |❌ |  ✅ | ✅  |
+| Network             | ChainId | DAI | BUSD | USDT | USDC |
+| ------------------- | ------- | --- | ---- | ---- | ---- |
+| Ethereum            | 1       | ✅  | ✅   | ✅   | ✅   |
+| Binance Smart Chain | 56      | ✅  | ✅   | ❌   | ✅   |
+| Polygon Mainnet     | 137     | ✅  | ✅   | ✅   | ✅   |
+| Mumbai              | 80001   | ❌  | ❌   | ❌   | ❌   |
+| BSC Testnet         | 97      | ❌  | ❌   | ❌   | ❌   |
+| Goerli Testnet      | 5       | ✅  | ❌   | ✅   | ✅   |
+
+
 
 ## License
 
