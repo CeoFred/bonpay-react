@@ -4,7 +4,7 @@ export interface EventResponse {
 }
 
 export interface Config {
-  recepient: string
+  recipient: string
   value: string
   chainId: number
   onSuccess?: (response: EventResponse) => void
