@@ -1,6 +1,6 @@
 {
   "name": "bonpay-react",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "This is an reactJS library for implementing bonpay finance payment gateway",
   "author": "CeoFred",
   "license": "MIT",
