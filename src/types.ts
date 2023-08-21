@@ -18,7 +18,7 @@ export interface Config {
   paymentMethods: {
     solanaPay?: boolean
     browserWallet?: boolean
-    swap?: boolean
+    swapToPay?: boolean
   }
   apiKey?: string
   currency: string

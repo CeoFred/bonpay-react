@@ -25,7 +25,7 @@ const App = () => {
     paymentMethods: {
       solanaPay: true,
       browserWallet: true,
-      swap: true,
+      swapToPay: true,
     },
     apiKey: 'bp_3d3d29876cvx82987eded3ewc2d2s2ed3d3d34',
     currency: 'USDC',
