@@ -1,10 +1,10 @@
 {
   "name": "bonpay-react",
   "version": "1.6.1",
-  "description": "Web3 Payments made easy",
+  "description": "This is an reactJS library for implementing bonpay finance payment gateway",
   "author": "CeoFred",
   "license": "MIT",
-  "repository": "CeoFred/bonpay-react",
+  "repository": "https://github.com/CeoFred/bonpay-react",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -26,6 +26,17 @@
   "peerDependencies": {
     "react": "^16.0.0"
   },
+  "keywords": [
+    "Javascript",
+    "github",
+    "ReactJS",
+    "Open Source",
+    "payments",
+    "Bonpay Finance",
+    "Web3",
+    "Payment",
+    "Solana"
+  ],
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

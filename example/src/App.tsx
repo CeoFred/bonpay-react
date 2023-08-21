@@ -1,19 +1,9 @@
 import React from 'react'
 
-import { useBonPay } from 'bonpay-react'
+import { BonpayButton, BonpayButtonProps } from 'bonpay-react'
 
 
 const App = () => {
-
-  const bonPay = useBonPay({
-    value: '0.006',
-    recipient: '0xAFcC4d55a83ae1A449Bee7783A2737aFb5d82254',
-    chainId: 97,
-    onSuccess,
-    onError,
-    onClose
-  })
-
   function onSuccess(data: any) {
     console.log(data)
   }
@@ -26,14 +16,27 @@ const App = () => {
     console.log(data)
   }
 
-  function handlePayment() {
-    const pay = bonPay()
-    pay.setup()
-    pay.open()
+  const config: BonpayButtonProps = {
+    amount: '0.0001',
+    recipient: '9rXsixbNgveNs6aUmzoQmiG3qsmhaTfra1Y3NarjCrxh',
+    paymentSource: 'direct',
+    network: 'MAINNET',
+    blockchain: 'solana',
+    paymentMethods: {
+      solanaPay: true,
+      browserWallet: true,
+      swap: true,
+    },
+    apiKey: 'bp_3d3d29876cvx82987eded3ewc2d2s2ed3d3d34',
+    currency: 'USDC',
+    paylinkId:'3e3',
+    onSuccess,
+    onError,
+    onClose,
+    text:'Pay Now'
   }
 
-  return <button onClick={handlePayment
-  }>Pay Now</button>
+  return <BonpayButton {...config} />
 }
 
 export default App

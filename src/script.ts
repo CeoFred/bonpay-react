@@ -5,11 +5,10 @@ type ScriptStatusType = {
   error: boolean
 }
 
-const bonPayJS = 'https://bonpay-js.vercel.app/v1.index.bundle.js'
-
 const id = 'bonPayScript'
 
-export default function useScript() {
+export default function useScript(): boolean[] {
+  const src = 'https://bonpay-js.onrender.com/v1.index.bundle.js'
 
   const [state, setState] = useState<ScriptStatusType>({
     loaded: false,
@@ -28,7 +27,7 @@ export default function useScript() {
 
     const script = document.createElement('script')
     script.id = id
-    script.src = bonPayJS
+    script.src = src
     script.async = true
 
     const onScriptLoad = () => {
@@ -39,6 +38,7 @@ export default function useScript() {
     }
 
     const onScriptError = () => {
+      script.remove()
       setState({
         loaded: true,
         error: true

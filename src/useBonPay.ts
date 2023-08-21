@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import useScript from './script'
-import { Config, NestedFuncs } from './types'
+import { Config, NestedFuncs, callback } from './types'
 
 declare const window: Window &
   typeof globalThis & {
@@ -8,23 +8,27 @@ declare const window: Window &
   }
 
 const useBonPay = (props: Config) => {
-
   const [loaded, error] = useScript()
 
   useEffect(() => {
-    if (error) throw new Error('Unable to load useBonPay modal')
+    if (error) throw new Error('Unable to load bonpay inline script')
   }, [error])
 
-  function returnPayment(){
-    if (error) throw new Error('Unable to load useBonPay modal')
-    let pay
+  function returnPayment(
+    onSuccess: callback,
+    onError: callback,
+    onClose: callback
+  ) {
+    if (error) throw new Error('Unable to load inline script')
+    let pay: NestedFuncs
     if (loaded) {
       pay = window.BonPay && new (window.BonPay as any)(props)
-      return pay;
+      pay.setup(onSuccess, onError, onClose)
+      pay.open()
+      
     }
-    return pay;
   }
-  
+
   return returnPayment
 }
 
