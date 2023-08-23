@@ -24,6 +24,14 @@ export interface Config {
   currency: string
   paylinkId?: string
   text?: string
+  customer?: {
+    email?: string
+    full_name?: string
+    twitter?: string
+    discord_id?: string
+    phone_number?: string
+    full_address?: string
+  }
 }
 
 
