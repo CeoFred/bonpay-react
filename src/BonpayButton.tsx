@@ -23,7 +23,6 @@ const BonpayButton = ({
   const initializePayment = useBonpay(others);
   return (
     <div>
-    
       <button className={className} onClick={(): void => initializePayment(onSuccess, onClose, onError)}>
         {text || children}
       </button>

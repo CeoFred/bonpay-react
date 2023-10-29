@@ -2,7 +2,6 @@ import React from 'react'
 
 import { BonpayButton, BonpayButtonProps } from 'bonpay-react'
 
-
 const App = () => {
   function onSuccess(data: any) {
     console.log(data)
