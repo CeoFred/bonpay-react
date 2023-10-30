@@ -7,29 +7,26 @@ declare const window: Window &
     BonPay: (config: Config) => NestedFuncs
   }
 
-const useBonPay = (props: Config) => {
-  const [loaded, error] = useScript()
+const useBonPay = (props: Config):[Function,boolean] => {
+  const [loaded, error] = useScript(props.isProduction)
 
   useEffect(() => {
     if (error) throw new Error('Unable to load bonpay inline script')
   }, [error])
 
-  function returnPayment(
+  function initBonpay(
     onSuccess: callback,
     onError: callback,
     onClose: callback
   ) {
     if (error) throw new Error('Unable to load inline script')
     let pay: NestedFuncs
-    if (loaded) {
       pay = window.BonPay && new (window.BonPay as any)(props)
       pay.setup(onSuccess, onError, onClose)
       pay.open()
-      
-    }
   }
 
-  return returnPayment
+  return [initBonpay,loaded]
 }
 
 export default useBonPay

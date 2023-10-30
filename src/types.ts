@@ -2,19 +2,16 @@ export interface EventResponse {
   type: string
   data: undefined | Object
 }
-type PaymentSource = 'paylink' | 'direct';
-type NetworkId = 'MAINNET' | 'DEVNET';
-type Blockchain = 'solana' | 'ethereum';
+// type PaymentSource = 'paylink' | 'direct';
+// type NetworkId = 'MAINNET' | 'DEVNET';
+// type Blockchain = 'solana' | 'ethereum';
 
 export interface Config {
-  onSuccess?: callback
-  onError?: callback
-  onClose?: callback
   amount: string
   recipient: string
-  paymentSource: PaymentSource
-  network: NetworkId
-  blockchain: Blockchain
+  paymentSource: 'paylink' | 'direct'
+  network: 'MAINNET' | 'DEVNET'
+  blockchain: 'solana' | 'ethereum'
   paymentMethods: {
     solanaPay?: boolean
     browserWallet?: boolean
@@ -32,6 +29,7 @@ export interface Config {
     phone_number?: string
     full_address?: string
   }
+  isProduction?: boolean
 }
 
 

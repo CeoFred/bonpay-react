@@ -3,6 +3,7 @@ import useBonpay from './useBonPay';
 import { callback, Config } from './types';
 
 export interface BonpayButtonProps extends Config {
+  isProduction?: boolean;
   text?: string;
   className?: string;
   children?: ReactNode;
@@ -11,20 +12,18 @@ export interface BonpayButtonProps extends Config {
   onError: callback;
 }
 
-const BonpayButton = ({
-  text,
-  className,
-  children,
-  onSuccess,
-  onClose,
-  onError,
-  ...others
-}: BonpayButtonProps): JSX.Element => {
-  const initializePayment = useBonpay(others);
+const BonpayButton = (props: BonpayButtonProps): JSX.Element => {
+  const [initializePayment, loaded] = useBonpay(props);
+
+  const handleInit = () => {
+    if (loaded){
+      initializePayment(props.onSuccess, props.onClose, props.onError)
+    }
+  }
   return (
     <div>
-      <button className={className} onClick={(): void => initializePayment(onSuccess, onClose, onError)}>
-        {text || children}
+      <button className={props.className} onClick={handleInit}>
+        {props.text || props.children}
       </button>
       </div>
   );

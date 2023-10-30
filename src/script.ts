@@ -7,8 +7,10 @@ type ScriptStatusType = {
 
 const id = 'bonPayScript'
 
-export default function useScript(): boolean[] {
-  const src = 'https://bonpay-js.onrender.com/v1.index.bundle.js'
+export default function useScript(isProduction: boolean = true): boolean[] {
+  const src = !isProduction
+    ? 'http://localhost:8080/v1.index.bundle.js'
+    : 'https://bonpay-js.onrender.com/v1.index.bundle.js'
 
   const [state, setState] = useState<ScriptStatusType>({
     loaded: false,
@@ -18,7 +20,7 @@ export default function useScript(): boolean[] {
   useEffect(() => {
     const scriptTag = document.getElementById(id)
     const scriptSrc = scriptTag && scriptTag.getAttribute('src')
-
+    
     if (scriptSrc)
       return setState({
         loaded: true,
@@ -40,7 +42,7 @@ export default function useScript(): boolean[] {
     const onScriptError = () => {
       script.remove()
       setState({
-        loaded: true,
+        loaded: false,
         error: true
       })
     }
