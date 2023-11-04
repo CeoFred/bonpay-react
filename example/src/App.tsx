@@ -33,7 +33,7 @@ const App = () => {
     onError,
     onClose,
     text:'Pay Some Cash Now',
-    isProduction: false,
+    isProduction: true,
   }
   return <BonpayButton {...config} />
 }
