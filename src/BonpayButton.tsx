@@ -22,7 +22,7 @@ const BonpayButton = (props: BonpayButtonProps): JSX.Element => {
   }
   return (
     <div>
-      <button className={props.className} onClick={handleInit}>
+      <button disabled={!loaded} className={props.className} onClick={handleInit}>
         {props.text || props.children}
       </button>
       </div>
